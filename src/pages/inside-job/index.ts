@@ -1,0 +1,1 @@
+export { InsideJobPage } from './view';
