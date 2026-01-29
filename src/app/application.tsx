@@ -15,7 +15,9 @@ export function App() {
       }}
     >
       <Navbar />
-      <RouterComponent />
+      <div className="p-10 print:py-4 print:px-6">
+        <RouterComponent />
+      </div>
     </RouterProvider>
   );
 }

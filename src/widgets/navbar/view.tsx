@@ -1,22 +1,10 @@
 import { RouteLink } from '../../shared/app-router';
 
 export const Navbar = () => (
-  <nav className="bg-gray-800">
+  <nav className="bg-gray-800 print:hidden">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="flex items-center justify-between h-16">
         <div className="flex items-center">
-          <div className="flex-shrink-0">
-            <img
-              className="block lg:hidden h-8 w-auto"
-              src="/path/to/logo.png"
-              alt="Logo"
-            />
-            <img
-              className="hidden lg:block h-8 w-auto "
-              src="/path/to/logo.png"
-              alt="Logo"
-            />
-          </div>
           <div className="hidden md:block">
             <div className="flex items-baseline">
               <RouteLink
