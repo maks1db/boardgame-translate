@@ -1,4 +1,4 @@
-export class GameData<Item extends Record<string, unknown>> {
+export class GameData<Item extends Record<string, string | number>> {
   private items: Item[] = [];
 
   add(item: Item) {

@@ -1,7 +1,9 @@
+/* eslint-disable no-param-reassign */
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import { makeAutoObservable } from 'mobx';
 import { heroes as baseHeroes } from './data';
 
+const CHUNK = 24;
 export class LOTRStore {
   from = '';
 
@@ -29,6 +31,20 @@ export class LOTRStore {
         }
         return compare(hero.number!, this.to, 'lte');
       });
+  }
+
+  get heroesChunks() {
+    type T = typeof this.heroes;
+    return this.heroes.reduce<T[]>((acc, item) => {
+      const chunk = acc[acc.length - 1];
+      if (!chunk || chunk.length === CHUNK) {
+        acc[acc.length] = [item];
+      } else {
+        chunk.push(item);
+      }
+
+      return acc;
+    }, []);
   }
 }
 
