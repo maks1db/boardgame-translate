@@ -12,7 +12,14 @@ export const InsideJobPage: FC = () => {
 
       {cards.map((color, ind) => (
         <Fragment key={color}>
-          <div className="font-roboto text-lg mb-2 font-bold">{color}</div>
+          <div
+            className={twMerge(
+              ind !== 0 && 'pt-4',
+              'font-roboto text-lg mb-2 font-bold',
+            )}
+          >
+            {color}
+          </div>
           <div
             className={twMerge(
               'grid grid-flow-row grid-cols-3 gap-0',
